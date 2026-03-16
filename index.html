@@ -1,92 +1,213 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resume</title>
   <style>
-    :root{
+    :root {
       --page-w: 960px;
       --left-w: 280px;
       --gap: 20px;
       --fg: #111;
-      --muted:#666;
-      --line:#e6e6e6;
-      --bg:#fff;
+      --muted: #666;
+      --line: #e6e6e6;
+      --bg: #fff;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0; padding:24px;
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
-      color:var(--fg); background:#f5f5f5;
+      color: var(--fg);
+      background: #f5f5f5;
     }
-    .page{
-      max-width:var(--page-w);
-      margin:0 auto;
-      background:var(--bg);
-      border:1px solid var(--line);
-      padding:24px;
+
+    .page {
+      max-width: var(--page-w);
+      margin: 0 auto;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 24px;
     }
-    header{
-      display:flex; justify-content:space-between; align-items:flex-end;
-      padding-bottom:16px; border-bottom:1px solid var(--line);
-      margin-bottom:18px;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 18px;
     }
-    .name{font-size:26px; font-weight:800; letter-spacing:-0.2px;}
-    .role{margin-top:6px; color:var(--muted); font-weight:600;}
-    .top-links{font-size:12px; color:var(--muted); text-align:right; line-height:1.5;}
-    .grid{
-      display:grid;
+
+    .name {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+    }
+
+    .role {
+      margin-top: 6px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .top-links {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    .grid {
+      display: grid;
       grid-template-columns: var(--left-w) 1fr;
-      gap:var(--gap);
+      gap: var(--gap);
       min-height: 1px;
     }
-    .card{
-      padding:14px 14px 10px;
-      border:1px solid var(--line);
-      border-radius:10px;
-      margin-bottom:12px;
-    }
-    h2{
-      font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
-      margin:0 0 10px; color:#222;
-    }
-    .item{margin:0 0 8px; font-size:13px; line-height:1.5;}
-    .muted{color:var(--muted)}
-    .pill{
-      display:inline-block; font-size:12px;
-      border:1px solid var(--line);
-      padding:4px 8px; border-radius:999px;
-      margin:0 6px 6px 0;
-    }
-    .section{margin-bottom:16px;}
-    .h3{font-weight:800; margin:0 0 4px; font-size:15px;}
-    .meta{font-size:12px; color:var(--muted); margin:0 0 8px;}
-    ul{margin:0; padding-left:18px;}
-    li{margin:0 0 6px; font-size:13px; line-height:1.5;}
-    a{color:inherit; text-decoration:underline; text-underline-offset:2px;}
-    @media print{
-      body{background:#fff; padding:0;}
-      .page{border:none; padding:0;}
-      a{text-decoration:none;}
+
+    .card {
+      padding: 14px 14px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 12px;
     }
 
-    a {text-decoration: none;
-       font-weight: 600;
+    h2 {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+      color: #222;
+    }
+
+    .item {
+      margin: 0 0 8px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      padding: 4px 8px;
+      border-radius: 999px;
+      margin: 0 6px 6px 0;
+    }
+
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .h3 {
+      font-weight: 800;
+      margin: 0 0 4px;
+      font-size: 20px;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin: 0 0 6px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
       }
+
+      .page {
+        border: none;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+
     a:hover {
       text-decoration: underline;
-      }
-
-    .sub-hint{
-      font-size:12px;
-      color:#888;
-      margin-top:4px;
-      margin-bottom:8px;
     }
 
+    .sub-hint {
+      font-size: 12px;
+      color: #888;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    aside {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+    }
+
+
+    .project-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+
+    .portfolio-group-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #686868;
+      margin-top: 5px;
+      margin-bottom: 6px;
+      padding-top: 6px;
+
+    }
+
+    .portfolio-hover:hover {
+      background: #fafaad;
+      border-radius: 10px;
+      transition: background 0.15s ease;
+    }
+
+    .portfolio-hover:hover>a {
+      color: #fff;
+      background: #000;
+      border-radius: 4px;
+    }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
@@ -95,8 +216,8 @@
         <div class="role">영상 편집자 | 정보성·브랜딩/롱폼·숏폼</div>
       </div>
       <div class="top-links">
-        Email: no.4_fantasy@outlook.com<br/>
-        Phone: 010-8835-7952<br/>
+        Email: no.4_fantasy@outlook.com<br />
+        Phone: 010-8835-7952<br />
       </div>
     </header>
 
@@ -104,7 +225,9 @@
       <!-- LEFT -->
       <aside>
         <div class="card">
-          <h2>Contact</h2>
+          <h2>Profile</h2>
+          <p class="item">• 성별: 남자 </p>
+          <p class="item">• 나이: 198x년생 </p>
           <p class="item">• 거주: 서울 / 재택 </p>
           <p class="item">• 근무: 프리랜서/계약직/정규 협의</p>
           <p class="item">• Phone: 010-8835-7952</p>
@@ -113,36 +236,38 @@
 
         <div class="card">
           <h2>Capabilities</h2>
-            <p class="item">• 콘텐츠 기획 및 구조 설계</p>
-            <p class="item">• 영상 편집 (쇼츠/롱폼)</p>
-            <p class="item">• 썸네일 제작</p>
-            <p class="item">• 포맷 기획 및 채널 방향 설정</p>
+          <p class="item">• 콘텐츠 기획 및 구조 설계</p>
+          <p class="item">• 영상 편집 (쇼츠/롱폼)</p>
+          <p class="item">• 썸네일 제작</p>
+          <p class="item">• 포맷 기획 및 채널 방향 설정</p>
         </div>
 
         <div class="card">
           <h2>Core Skills</h2>
-            <p class="item">• 어려운 내용을 이해하기 쉽게 구조화</p>
-            <p class="item">• 영상 리텐션 구조 설계</p>
-            <p class="item">• 자막 가독성/속도 튜닝</p>
-            <p class="item">• 정보성 스토리라인 정리</p>
-            <p class="item">• 감정 반응 유도형 편집 설계</p>
+          <p class="item">• 어려운 내용을 이해하기 쉽게 구조화</p>
+          <p class="item">• 영상 리텐션 구조 설계</p>
+          <p class="item">• 자막 가독성/속도 튜닝</p>
+          <p class="item">• 정보성 스토리라인 정리</p>
+          <p class="item">• 감정 반응 유도형 편집 설계</p>
         </div>
 
 
         <div class="card">
           <h2>Working Style</h2>
-            <p class="item">• 기획 의도 분석 후 구조 설계</p>
-            <p class="item">• 초반 후킹 중심 리텐션 설계</p>
-            <p class="item">• 감정 흐름 기반 컷 재배치</p>
-            <p class="item">• 장기 운영 기준 정립</p>
+          <p class="item">• 기획 의도 분석 후 구조 설계</p>
+          <p class="item">• 초반 후킹 중심 리텐션 설계</p>
+          <p class="item">• 감정 흐름 기반 컷 재배치</p>
+          <p class="item">• 장기 운영 기준 정립</p>
         </div>
 
         <div class="card">
           <h2>Tools</h2>
-            <span class="pill">Premiere Pro</span>
-            <span class="pill">After Effects</span>
-            <span class="pill">Photoshop</span>
-          
+          <span class="pill">Premiere Pro</span>
+          <span class="pill">After Effects</span>
+          <span class="pill">Photoshop</span>
+          <span class="pill">Davinci resolve</span>
+
+
         </div>
 
 
@@ -154,105 +279,118 @@
         <div class="section">
           <div class="h3">Summary</div>
           <p class="item muted">
-                정보 전달 중심의 영상 편집자입니다.<br>
-                쇼츠 채널을 직접 기획·대본·편집·운영하며 <br>
-                초반 후킹 → 감정/정보 전개 → 반응 유도 구조까지 설계해왔습니다.<br>
+            정보와 스토리를 시청 흐름에 맞게 재구성하는 영상 편집자입니다.<br>
+            쇼츠 채널을 직접 기획·대본·편집·운영하며 <br>
+            초반 후킹 → 감정/정보 전개 → 반응 유도 구조까지 설계해왔습니다.<br>
 
-                단순 컷 편집이 아니라,
-                “이 영상이 왜 이 구조여야 하는지”를 먼저 정리한 뒤 편집합니다.<br>
+            단순 컷 편집이 아니라,
+            “이 영상이 왜 이 구조여야 하는지”를 먼저 정리한 뒤 편집합니다.<br>
 
-                기준·정책·가이드에 맞춰
-                일관성 있게 결과물을 정리하는 방식에 익숙합니다.
+            기준·정책·가이드에 맞춰
+            일관성 있게 결과물을 정리하는 방식에 익숙합니다.
           </p>
         </div>
 
         <div class="section">
-          <div class="h3">Portfolio Videos <span class="sub-hint">(영상 제목을 클릭하면 재생됩니다)</span></div>
-          
+          <div class="h3">Portfolio Videos</div>
+          <div class="sub-hint">(영상 제목을 클릭하면 재생됩니다)</div>
 
-          <div class="meta">롱폼</div>
+
+          <div class="portfolio-group-title">[롱폼 영상]</div>
           <ul>
 
-            <li>
-              <a href="https://youtu.be/p2ZjeSM0TZk" target="_blank">예능 영상 재편집 </a>
-               — 편집/자막/사운드 <br> 
-               반응이 약한 구간에 컷 템포 재조정과 VFX 포인트를 추가해 코미디 밀도 강화
+            <li class="portfolio-hover">
+              <a href="https://youtu.be/s7j0smpAaqc" target="_blank">스토리형 개인 채널 콘텐츠 </a> [컷 편집·자막·그래픽 효과·효과음] <br>
+              영상 흐름 재구성 + 리액션 강조 연출 + 자막 개선 + 효과음  <br>
+              → <a href="https://youtu.be/9BE0U5U_LQ8" target="_blank">원본영상</a>전개를 재구성하여 예능 스타일 연출 보강 + 콘텐츠 몰입도 유지
             </li>
 
-            <li>
-              <a href="https://youtu.be/wQReseJ4pP8" target="_blank">치과 채널 영상 </a>
-               — 편집/자막/사운드 <br> 
-               미리보기·본편 구분 정리, 개선된 자막과 리텐션 강화 중심 구조 재설계 
+            <li class="portfolio-hover">
+              <a href="https://youtu.be/p2ZjeSM0TZk" target="_blank">예능 영상 재편집 </a> [색보정·자막·그래픽 효과·효과음] <br>
+              색보정 비교 + 자막 개선 + 효과음 + 크로마키·속도 조절 <br>
+              → 예능 스타일 연출 보강 + 장면 리듬감 강화
             </li>
 
-            <li>
-              <a href="https://youtu.be/n1YHdJyulVM" target="_blank">부동산 채널 영상 </a>
-              — 편집/자막/사운드 <br> 
-              모션·전환 효과 정교화 및 정보 중심 구조 재설계
+            <li class="portfolio-hover">
+              <a href="https://youtu.be/wQReseJ4pP8" target="_blank">치과 채널 영상 </a> [컷 편집·자막·사운드·자료화면·AI 애니메이션]<br>
+              미리보기·본편 구분 정리 + 영상 흐름 재구성 + 자막 개선 + AI 애니메이션<br>
+              → 콘텐츠 이해도 개선 장면 + 리듬감 강화
             </li>
 
-            <li>
-              <a href="https://youtu.be/qjZJxZwuEbE" target="_blank">의학관련 채널 영상 </a>
-               — 편집/자막/사운드 <br> 
-               가독성 자막·AI 애니메이션 적용으로 이해도 향상, 리텐션 중심 구조 재설계.
-            </li>
-            
-            <li>
-              <a href="https://youtu.be/mRppLnVBarc" target="_blank">개인 방송 채널 영상 </a>
-              — 편집/자막/사운드 <br> 
-              어색한 컷 연결 보완 및 몰입도 유지 중심 편집 개선
+            <li class="portfolio-hover">
+              <a href="https://youtu.be/n1YHdJyulVM" target="_blank">부동산 채널 영상 </a> [컷 편집·자막·사운드·자료화면·그래픽 효과] <br>
+              영상 흐름 재구성 + 자막 개선 + 화면 전환 + 크로마키·그래픽 + 효과음 <br>
+              → 콘텐츠 이해도 개선 장면 + 리듬감 강화
             </li>
 
-            <li>
-              <a href="https://youtu.be/WLr2pOJ04Ho" target="_blank">정보성 콘텐츠 구조 설계 영상 </a>
-               — 편집/자막/사운드<br> 
-               정보 흐름 구조 설계 및 리텐션 중심 템포 조정
+            <li class="portfolio-hover">
+              <a href="https://youtu.be/qjZJxZwuEbE" target="_blank">의학관련 채널 영상 </a> [컷 편집·자막·사운드·자료화면·그래픽 효과·AI
+              애니메이션]<br>
+              영상 흐름 재구성 + 자막 개선 + 크로마키·그래픽 + 효과음 <br>
+              → 콘텐츠 이해도 개선 장면 + 리듬감 강화
+            </li>
+
+            <li class="portfolio-hover">
+              <a href="https://youtu.be/mRppLnVBarc" target="_blank">개인 방송 채널 영상 </a> [컷 편집·자막·사운드·그래픽 효과] <br>
+              자막 개선 + 효과음 +화면 전환 + 크로마키·속도 조절 <br>
+              → 예능 스타일 연출 보강 + 장면 리듬감 강화
+            </li>
+
+            <li class="portfolio-hover">
+              <a href="https://youtu.be/WLr2pOJ04Ho" target="_blank">정보성 콘텐츠 구조 설계 영상 </a> [기획·자막·사운드·그래픽 효과]<br>
+              화면 구성·연출 + 크로마키·모션 & 인포 그래픽 + 효과음 <br>
+              → 정보 흐름 중심 구조 설계 및 템포 기반 연출
             </li>
           </ul>
 
-          <div class="meta">숏폼</div>
+          <div class="portfolio-group-title">[숏폼 영상]</div>
           <ul>
-            <li>
-              <a href="https://www.youtube.com/shorts/xrOzx9LNIYo" target="_blank">영어 리스닝 영상</a>
-              — 기획/편집/자막/사운드 <br>
-              리텐션 중심 템포 중심 편집
+            <li class="portfolio-hover">
+              <a href="https://www.youtube.com/shorts/xrOzx9LNIYo" target="_blank">영어 리스닝 영상</a> [기획·컷편집·자막·사운드·그래픽
+              효과]<br>
+              화면 구성·연출 + 타이포 애니메이션 + 크로마키 + 효과음 <br>
+              → 리텐션 템포 강화 + 문장 단위 리스닝 집중도 향상
             </li>
 
-            <li>
-              <a href="https://youtube.com/shorts/VDaDowgYjyQ" target="_blank">영어 교육 채널 영상</a>
-              — 편집/자막/사운드 <br>
-              전환이 과도한 <a href="https://www.youtube.com/shorts/XKZQFDPjVGY" target="_blank">원본영상</a>을
-              정보 중심으로 간결하게 재편집
+            <li class="portfolio-hover">
+              <a href="https://youtube.com/shorts/VDaDowgYjyQ" target="_blank">영어 교육 채널 영상</a> [컷편집·사운드·그래픽 효과]<br>
+              화면 구성 + 영상 흐름 재구성 + 효과음 <br>
+              → <a href="https://www.youtube.com/shorts/XKZQFDPjVGY" target="_blank">원본영상</a>을 화면구조와 전개를 재구성하여 전달력 개선
             </li>
 
-            <li>
-              <a href="https://www.youtube.com/shorts/lnDkDTC2x8U" target="_blank">정치 채널 영상</a>
-              — 기획/편집/자막/사운드 <br>
-              정적일 수 있는 콘텐츠를 몰입도 유지 중심으로 재구성·편집
+            <li class="portfolio-hover">
+              <a href="https://www.youtube.com/shorts/lnDkDTC2x8U" target="_blank">정치 채널 영상</a> [기획·컷편집·자막·사운드·그래픽
+              효과]<br>
+              화면 구성·연출 + 자막 + 크로마키 + 효과음 <br>
+              → 콘텐츠 몰입도 유지 및 전달력 향상
             </li>
 
-            <li>
-              <a href="https://youtube.com/shorts/VhVcnVJmAzY?feature=share" target="_blank">매장 홍보 영상</a>
-              — 기획/편집/자막/사운드 <br>
-              AI를 활용한 가게홍보 영상 편집
+            <li class="portfolio-hover">
+              <a href="https://youtube.com/shorts/VhVcnVJmAzY?feature=share" target="_blank">매장 홍보 영상</a> [기획·자막·사운드·그래픽
+              효과·AI 애니메이션] <br>
+              AI 애니메이션 + 자막 + 크로마키 + 효과음 <br>
+              → 부담 없이 시청 가능한 리텐션 템포 강화
             </li>
-            
-            <li>
+
+            <li class="portfolio-hover">
               <a href="https://youtube.com/shorts/pm8EbIdjDMU?feature=share" target="_blank">정수기 공모전 출품작 영상</a>
-              — 기획/편집/자막/사운드 <br>
-              AI를 활용한 퓨리얼 정수기 브랜드 영상 편집
+              [기획·자막·사운드·그래픽 효과·AI 애니메이션] <br>
+              AI 애니메이션 + 화면 구성·연출 + 화면전환 + 효과음 <br>
+              → 브랜드 및 제품 인지도 강화 + 가벼운 시청 기반 도달성 확보
+            </li class="portfolio-hover">
+
+            <li class="portfolio-hover">
+              <a href="https://youtube.com/shorts/YEApMN491Bo?feature=share" target="_blank">룩북 sns바이럴 영상</a>
+              [기획·사운드·그래픽 효과·AI 애니메이션] <br>
+              AI 애니메이션 + 화면 구성·연출 + 화면전환 + 효과음 <br>
+              → 바이럴 영상에 적용하여 스타일·분위기 전달력 강화 및 콘텐츠 몰입도 향상
             </li>
 
-            <li>
-              <a href="https://youtube.com/shorts/YEApMN491Bo?feature=share" target="_blank">룩북 sns바이럴 영상</a>
-              — 기획/편집/자막/사운드 <br>
-              감각적인 컷 전환과 리듬 편집으로 스타일과 분위기를 빠르게 전달한 영상
-            </li>
-            
-            <li>
-              <a href="https://youtube.com/shorts/T4SdUeYvXkI" target="_blank">제품 sns바이럴 영상</a>
-              — 기획/편집/자막/사운드 <br>
-              사용자 감정 반응’을 중심으로 설계된 스토리텔링형 편집
+            <li class="portfolio-hover">
+              <a href="https://youtube.com/shorts/T4SdUeYvXkI" target="_blank">제품 sns바이럴 영상</a> [기획·컷편집·자막·사운드·그래픽
+              효과]<br>
+              컷편집 + 화면전환 + 나레이션 + 효과음 <br>
+              → 전달력 강화 및 시청 유지력 개선
             </li>
 
           </ul>
@@ -284,7 +422,7 @@
             <li>문장 단위 컷 분리 및 의미 단위 강조 편집</li>
             <li>짧은 구간 반복 재생을 고려한 템포 설계</li>
           </ul>
-          
+
         </div>
 
 
@@ -292,7 +430,5 @@
     </div>
   </div>
 </body>
+
 </html>
-
-
-
